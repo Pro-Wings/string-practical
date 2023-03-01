@@ -8,21 +8,18 @@ public class TestStringWordAndCharCount2 {
 
 		String line = "india is my country india have 27 states";
 		
-		String lineWithoutSpace = line.replace(" ", "");
-
 		String[] words = line.split(" ");
 		
-		char[] characters = new char[lineWithoutSpace.length()];
+		System.out.println("Total number of words : "+words.length);
+		
+		String lineWithoutSpace = line.replace(" ", "");
+		
+		System.out.println("Total number of chars : "+lineWithoutSpace.length());
 
-		int preWrdLenght = 0;
-		for(String word : words)
-		{
-			System.arraycopy(word.toCharArray(), 0, characters, preWrdLenght, word.length());
-			preWrdLenght += word.length();		
-		}
-
+		char[] characters = lineWithoutSpace.toCharArray();
+		
 		System.out.println(Arrays.toString(characters));
-
+		
 	}
 
 }

@@ -2,9 +2,10 @@ package com.prowings.immutableClass;
 
 public class Address {
 	
-	String city;
-	String country;
-	int pin;
+	private String city;
+	private String country;
+	private int pin;
+	
 	public Address() {
 		super();
 		// TODO Auto-generated constructor stub

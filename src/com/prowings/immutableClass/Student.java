@@ -1,8 +1,9 @@
 package com.prowings.immutableClass;
 
-public final class Student {
+public final class Student //#1: make class final 
+{
 	
-	private final int roll;
+	private final int roll;  //#2: declare all fields private and final
 	private final String name;
 	private final Address address;
 	
@@ -17,10 +18,10 @@ public final class Student {
 		this.roll = roll;
 		this.name = name;
 		
-		Address clonedAddress = new Address();
-		clonedAddress.city = address.getCity();
-		clonedAddress.country = address.getCountry();
-		clonedAddress.pin = address.getPin();
+		Address clonedAddress = new Address(); //#4:perform deep copy for mutable field in constructor
+		clonedAddress.setCity(address.getCity());
+		clonedAddress.setCountry(address.getCountry());;
+		clonedAddress.setPin(address.getPin());
 		
 //		this.address = address;
 		
@@ -31,7 +32,8 @@ public final class Student {
 		return roll;
 	}
 
-//	public void setRoll(int roll) {
+//	public void setRoll(int roll)  //#3:remove setter methods
+//	{ 
 //		this.roll = roll;
 //	}
 
@@ -45,11 +47,11 @@ public final class Student {
 
 	public Address getAddress() {
 		
+//		return address; // #5:instead of returning original address(mutable field), return a copy of address
 		Address dummyAddress = new Address();
 		dummyAddress.setCity(this.address.getCity());
 		dummyAddress.setCountry(this.address.getCountry());
 		dummyAddress.setPin(this.address.getPin());
-//		return address;
 		return dummyAddress;
 	}
 

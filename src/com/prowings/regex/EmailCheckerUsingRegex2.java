@@ -20,7 +20,7 @@ public class EmailCheckerUsingRegex2 {
 	
 	public static void main(String[] args) {
 		
-		boolean res = isValidEmail("bob-smith@foo");
+		boolean res = isValidEmail("bob-smith@foo.com");
 		
 		if(res)
 			System.out.println("Valid Email!!");
